@@ -8,9 +8,10 @@ consumption <- read.table(pipe('grep "^[1-2]/2/2007" "household_power_consumptio
 DateTime <- strptime(paste(consumption$Date, consumption$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
 
 # Set up png file
-png("Plot4.png", width=506, height=506)
+png("Plot4.png", width=480, height=480)
+# Set up page to have two columns and two rows of charts side by side
 par(mfrow = c(2,2))
-# Set up line chart with legend in top right
+# Set up charts
 with(consumption, {
         plot(DateTime, consumption$Global_active_power, type="l", ylab="Global Active Power", xlab= " ")
         plot(DateTime, consumption$Voltage, type="l", xlab="datetime", ylab= "Voltage")

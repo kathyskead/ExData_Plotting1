@@ -7,7 +7,7 @@ consumption <- read.table(pipe('grep "^[1-2]/2/2007" "household_power_consumptio
 #convert Date and time into POSIXlt and POSIXt and combine into one variable
 DateTime <- strptime(paste(consumption$Date, consumption$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
 # Set up png file
-png("Plot3.png", width=504, height=504)
+png("Plot3.png", width=480, height=480)
 # Set up line chart with legend in top right
 with(consumption, plot(DateTime, consumption$Sub_metering_1, ylab = "Energy sub metering", xlab=" ", type = "l", col= "black"))
 lines(DateTime, consumption$Sub_metering_2, type = "l", col= "red")

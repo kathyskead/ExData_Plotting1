@@ -7,7 +7,7 @@ consumption <- read.table(pipe('grep "^[1-2]/2/2007" "household_power_consumptio
 #convert Date and time into POSIXlt and POSIXt and combine into one variable
 DateTime <- strptime(paste(consumption$Date, consumption$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
 # Set up png file
-png("Plot2.png", width=504, height=504)
+png("Plot2.png", width=480, height=480)
 # Set up line chart
 plot(DateTime, consumption$Global_active_power, type="l", xlab = " ", ylab = "Global Active Power (kilowatts)")
 # close png device
